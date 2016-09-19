@@ -1,0 +1,22 @@
+<h2><b>{{title}}</b></h2>
+<div>
+  <label>카테고리명 : </label><input class="add" #categoryName />
+  <button class="add" (click)="add(categoryName.value); categoryName.value=''">
+    추가하기
+  </button>
+</div>
+<ul class="categorys">
+<li *ngFor="let category of categorys" (click)="onSelect(category)" 
+    [class.selected]="category === selectedCategory">
+    <span class="badge">{{category.id}}</span> {{category.name}}
+    <button class="delete"
+        (click)="delete(category); $event.stopPropagation()">삭제</button>
+</li>
+</ul>
+<div *ngIf="selectedCategory">
+<h2>
+    <b>'{{selectedCategory.name | uppercase}}'</b> 카테고리를 선택
+</h2>
+<button class="detail" (click)="gotoDetail()">상세보기</button>
+
+

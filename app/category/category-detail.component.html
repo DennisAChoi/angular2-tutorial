@@ -1,0 +1,14 @@
+<div *ngIf="category">
+<h2>{{category.name}} 상세</h2>
+<div><label>id: </label>{{category.id}}</div>
+<div>
+    <label>name: </label>
+    <input [(ngModel)]="category.name" placeholder="name"/>
+</div>
+<div>
+    <label>code: </label>
+    <input [(ngModel)]="category.code" placeholder="code"/>
+</div>
+<button (click)="goBack()">Back</button>
+<button (click)="save()">Save</button>
+</div>

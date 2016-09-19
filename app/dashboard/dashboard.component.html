@@ -1,0 +1,9 @@
+<h2><b>카테고리 리스트</b></h2>
+<div class="grid grid-pad">
+    <div *ngFor="let category of categorys" (click)="gotoDetail(category)" class="col-1-4">
+        <div class="module category">
+            <h4>{{category.name}}</h4>
+        </div>
+    </div>
+</div>
+<category-search></category-search>
